@@ -30,6 +30,37 @@ import Link from "next/link"
 </Link>
 ~~~
 
-- ```href``` values in a ```Link``` component correspond to its route, which follow the same rules as seen in lesson 2.
+- ```href``` values in a ```Link``` component correspond to its route, which follow the routing rules as seen in [2].
 
-- \_ **Code-splitting & pre-fetching** \_: By default, Next code-splits the application, so that only the JavaScript needed for the current page is served from the server. You can see it in action at ```Inspect > Network```. At production, Next also will pre-fetch any code needed for the current page in the background, decreasing its loading time. See more at https://web.dev/route-prefetching-in-nextjs/.
+- **Code-splitting & pre-fetching**: By default, Next code-splits the application, so that only the JavaScript needed for the current page is served from the server. You can see it in action at ```Inspect > Network```. At production, Next also will pre-fetch any code needed for the current page in the background, decreasing its loading time. See more at https://web.dev/route-prefetching-in-nextjs/.
+
+### 5. The ```App``` component
+
+- In ```_app.js```, the ```App``` component takes as an argument the corresponding component of the current page (located at the ```pages``` folder, as seen in [2]).
+
+- **Tip: Adding a Layout to all pages**
+
+~~~javascript
+// @ Layout.js
+export default function Layout({ children }) {
+  return (<>
+    <Navbar/>
+    {children}
+    <Footer/>
+  </>)
+}
+~~~
+
+~~~javascript
+// @ _app.js
+export default function App({ Component, pageProps }) {
+  return (<Layout><Component {...pageProps} /></Layout>)
+}
+~~~
+
+~~~javascript
+// @ index.js || someotherpage.js
+export default function HomeOrSomeOtherName() {
+  return (<Stuff/>)
+}
+~~~
