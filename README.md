@@ -73,3 +73,34 @@ export default function HomeOrSomeOtherName() {
 ~~~
 
 ## 6. Using styles
+
+- **Importing**
+
+~~~javascript
+// @ pages/_
+import '../styles/style.css'
+
+export default function _() {
+  return </>
+}
+~~~
+
+- **Global style sheet:**
+
+~~~css
+/* @ styles/global.css */
+
+*{
+    /* stuff */
+}
+~~~
+
+~~~javascript
+// @ _app.js
+
+import '@/styles/globals.css'
+
+export default function App({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+~~~
