@@ -72,35 +72,52 @@ export default function HomeOrSomeOtherName() {
 }
 ~~~
 
-## 6. Using styles
+## 6. CSS Modules
 
-- **Importing**
+- ***Global style sheet:***
 
 ~~~javascript
-// @ pages/_
-import '../styles/style.css'
+// @ _app.js
+import '@/styles/globals.css'
+
+export default function App({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+~~~
+
+- ***Regular imports***
+
+~~~javascript
+import 'folder/file.css'
 
 export default function _() {
   return </>
 }
 ~~~
 
-- **Global style sheet:**
+- ***CSS modules***
 
 ~~~css
-/* @ styles/global.css */
-
-*{
-    /* stuff */
-}
+/* @ folder1/Component.module.css */
+Style1{...}
+Style2{...}
+Style3{...}
 ~~~
 
 ~~~javascript
-// @ _app.js
-
-import '@/styles/globals.css'
-
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+// @ folder2/Component.js
+import styles from "folder1/Component.module.css"
+export default function Component (){
+    return(
+        <div ClassName={styles.Style1}>Style 1</div>
+        <div ClassName={styles.Style2}>Style 2</div>
+        <div ClassName={styles.Style3}>Style 3</div>
+    )
 }
+~~~
+
+Once the component is rendered, the corresponding HTML element's name mirrors the file structure, follow by a random suffix:
+
+~~~html
+<div class="Component_Style1_1Ecsu">
 ~~~
