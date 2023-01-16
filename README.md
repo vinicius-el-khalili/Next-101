@@ -25,7 +25,9 @@ import Component from "../components/Component"
 
 ~~~javascript
 import Link from "next/link"
-<Link href="/about"><h1>About</h1></Link>
+<Link href="/about">
+    <h1>About</h1>
+</Link>
 ~~~
 
 - ```href``` values in a ```Link``` component correspond to its route, which follow the same rules as seen in lesson 2.
