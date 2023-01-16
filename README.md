@@ -97,6 +97,9 @@ export default function _() {
 
 - ***CSS modules***
 
+A CSS Module is a CSS file in which all class names are scoped locally by default.
+See more at https://github.com/css-modules/css-modules.
+
 ~~~css
 /* @ folder1/Component.module.css */
 Style1{...}
@@ -116,8 +119,21 @@ export default function Component (){
 }
 ~~~
 
-Once the component is rendered, the corresponding HTML element's name mirrors the file structure, followed by a random suffix:
+Once the component is rendered, the corresponding HTML element's name mirrors the file structure, followed by a random suffix. This way, you can safely repeat naming conventions without generating conflict in the final CSS file.
+
+*(!) Pure elements cannot be targeted in module-based CSS. To target pure elements, you will need to use a global stylesheet or a regular import.*
 
 ~~~html
+<!-- Rendered HTML -->
 <div class="Component_Style1_1Ecsu"/>
+<div class="Component_Style2_4kYos"/>
+<div class="Component_Style3_8i0mq"/>
 ~~~
+
+~~~css
+/* Rendered CSS */
+Component_Style1_1Ecsu{...}
+Component_Style2_4kYos{...}
+Component_Style3_8i0mq{...}
+~~~
+
