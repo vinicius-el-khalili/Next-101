@@ -38,6 +38,13 @@ import Link from "next/link"
 
 - In ```_app.js```, the ```App``` component takes as an argument the corresponding component of the current page (located at the ```pages``` folder, as seen in [2]).
 
+~~~javascript
+// @ _app.js
+export default function App({ Component, pageProps }) {
+  return (<Component {...pageProps} />)
+}
+~~~
+
 - **Tip: Adding a Layout to all pages**
 
 ~~~javascript
@@ -64,3 +71,5 @@ export default function HomeOrSomeOtherName() {
   return (<Stuff/>)
 }
 ~~~
+
+## 6. Using styles
