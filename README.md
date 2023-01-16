@@ -121,8 +121,6 @@ export default function Component (){
 
 Once the component is rendered, the corresponding HTML element's name mirrors the file structure, followed by a random suffix. This way, you can safely repeat naming conventions without generating conflict in the final CSS file.
 
-*(!) Pure elements cannot be targeted in module-based CSS. To target pure elements, you will need to use a global stylesheet or a regular import.*
-
 ~~~html
 <!-- Rendered HTML -->
 <div class="Component_Style1_1Ecsu"/>
@@ -137,3 +135,4 @@ Component_Style2_4kYos{...}
 Component_Style3_8i0mq{...}
 ~~~
 
+*(!) Pure elements cannot be targeted in module-based CSS. To target pure elements, you will need to use a global stylesheet or a regular import.*
