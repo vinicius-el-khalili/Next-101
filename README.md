@@ -108,11 +108,11 @@ Style3{...}
 // @ folder2/Component.js
 import styles from "folder1/Component.module.css"
 export default function Component (){
-    return(
+    return(<>
         <div ClassName={styles.Style1}>Style 1</div>
         <div ClassName={styles.Style2}>Style 2</div>
         <div ClassName={styles.Style3}>Style 3</div>
-    )
+        </>)
 }
 ~~~
 
