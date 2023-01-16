@@ -13,5 +13,6 @@
 
 ## 3. Importing components
 
-- Import syntax is the same as React.
+- Import syntax is the same as React:
+
 ```import Component from "../components/Component"```
