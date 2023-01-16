@@ -27,3 +27,5 @@ import Link from "next/link"
 ```
 
 - ```href``` values in a ```Link``` component correspond to its route, which follow the same rules as seen in lesson 2.
+
+- Code splitting: 
