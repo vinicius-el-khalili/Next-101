@@ -15,7 +15,7 @@
 
 - Import syntax is the same as React:
 
-~~~javascript
+~~~jsx
 import Component from "../components/Component"
 ~~~
 
@@ -23,7 +23,7 @@ import Component from "../components/Component"
 
 - Client-side navigation is done throught the ```Link``` component and it runs on the browser. Different pages are loaded via JavaScript, instead of HTTP requests, resulting in a much quicker loading time.
 
-~~~javascript
+~~~jsx
 import Link from "next/link"
 <Link href="/about">
     <h1>About</h1>
@@ -38,7 +38,7 @@ import Link from "next/link"
 
 - In ```_app.js```, the ```App``` component takes as an argument the corresponding component of the current page (located at the ```pages``` folder, as seen in [2]).
 
-~~~javascript
+~~~jsx
 // @ _app.js
 export default function App({ Component, pageProps }) {
   return (<Component {...pageProps} />)
@@ -47,7 +47,7 @@ export default function App({ Component, pageProps }) {
 
 - **Tip: Adding a Layout to all pages**
 
-~~~javascript
+~~~jsx
 // @ Layout.js
 export default function Layout({ children }) {
   return (<>
@@ -58,14 +58,14 @@ export default function Layout({ children }) {
 }
 ~~~
 
-~~~javascript
+~~~jsx
 // @ _app.js
 export default function App({ Component, pageProps }) {
   return (<Layout><Component {...pageProps} /></Layout>)
 }
 ~~~
 
-~~~javascript
+~~~jsx
 // @ index.js || someotherpage.js
 export default function HomeOrSomeOtherName() {
   return (<Stuff/>)
@@ -76,7 +76,7 @@ export default function HomeOrSomeOtherName() {
 
 - ***Global style sheet:***
 
-~~~javascript
+~~~jsx
 // @ _app.js
 import '@/styles/globals.css'
 
@@ -104,7 +104,7 @@ Style2{...}
 Style3{...}
 ~~~
 
-~~~javascript
+~~~jsx
 // @ folder2/Component.js
 import styles from "folder1/Component.module.css"
 export default function Component (){
@@ -116,8 +116,8 @@ export default function Component (){
 }
 ~~~
 
-Once the component is rendered, the corresponding HTML element's name mirrors the file structure, follow by a random suffix:
+Once the component is rendered, the corresponding HTML element's name mirrors the file structure, followed by a random suffix:
 
 ~~~html
-<div class="Component_Style1_1Ecsu">
+<div class="Component_Style1_1Ecsu"/>
 ~~~
