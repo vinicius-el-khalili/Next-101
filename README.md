@@ -16,3 +16,14 @@
 - Import syntax is the same as React:
 
 ```import Component from "../components/Component"```
+
+## 4. Linking between pages
+
+- Client-side navigation is done throught the ```Link``` component and it runs on the browser. Different pages are loaded via JavaScript, instead of HTTP requests, resulting in a much quicker loading time.
+
+```
+import Link from "next/link"
+<Link href="/about"><h1>About</h1></Link>
+```
+
+- ```href``` values in a ```Link``` component correspond to its route, which follow the same rules as seen in lesson 2.
