@@ -175,3 +175,23 @@ const NotFound = () => {
 export default NotFound
 ~~~
 </details>
+
+<details>
+<summary>9. Images and Metadata</summary>
+
+- Next's ```Image``` component is as a replacement for the ```img``` element. ```Image``` comes with automatic responsiveness and lazy loading 
+(See more at https://dev.to/dephraiim/lazy-loading-images-in-nextjs-3am8).
+- See more at
+  - https://nextjs.org/docs/api-reference/next/image
+  - https://dev.to/dephraiim/lazy-loading-images-in-nextjs-3am8
+  - https://www.youtube.com/watch?v=8viWcH5bUE4
+
+~~~jsx
+import Image from 'next/image'
+export default function Page(){
+  return(
+    <Image src="/image.png" width={10} height={10}/>
+  )
+}
+~~~
+</details>
