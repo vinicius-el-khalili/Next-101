@@ -1,17 +1,17 @@
 # Next js tutorial - Net Ninja
 
-## 1. Intro & Setup
+<summary>## 1. Intro & Setup</summary>
 
 - ```npx create-next-app app-name```
 
-## 2. Pages & Routes
+<summary>## 2. Pages & Routes</summary>
 
 - Routing is done automatically by Next, mirroring the file structure in the project.
 - Each page is a react component inside the ```pages``` folder.
 - Subfolders also are mirrored as routes in the application.
 - ```index.js``` files are the default page for any given route/subfolder.
 
-## 3. Importing components
+<summary>## 3. Importing components</summary>
 
 - Import syntax is the same as React:
 
@@ -19,7 +19,7 @@
 import Component from "../components/Component"
 ~~~
 
-## 4. Linking between pages
+<summary>## 4. Linking between pages</summary>
 
 - Client-side navigation is done throught the ```Link``` component and it runs on the browser. Different pages are loaded via JavaScript, instead of HTTP requests, resulting in a much quicker loading time.
 
@@ -34,7 +34,7 @@ import Link from "next/link"
 
 - **Code-splitting & pre-fetching**: By default, Next code-splits the application, so that only the JavaScript needed for the current page is served from the server. You can see it in action at ```Inspect > Network```. At production, Next also will pre-fetch any code needed for the current page in the background, decreasing its loading time. See more at https://web.dev/route-prefetching-in-nextjs/.
 
-## 5. The ```App``` component
+<summary>## 5. The ```App``` component</summary>
 
 - In ```_app.js```, the ```App``` component takes as an argument the corresponding component of the current page (located at the ```pages``` folder, as seen in [2]).
 
@@ -72,7 +72,7 @@ export default function HomeOrSomeOtherName() {
 }
 ~~~
 
-## 6. CSS Modules
+<summary>## 6. Styling</summary>
 
 - ***Global style sheet:***
 
