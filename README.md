@@ -149,3 +149,29 @@ Component_Style3_8i0mq{...}
 
 *(!) Pure elements cannot be targeted in module-based CSS. To target pure elements, you will need to use a global stylesheet or a regular import.*
 </details>
+
+<details>
+
+<summary>7. 404 page</summary>
+
+- At the ```/pages``` folder, add a file called ```404.js```. Next will handle it automatically.
+</details>
+
+<details>
+
+<summary>8. Automatic redirection</summary>
+
+~~~jsx
+// @ 404.js
+const NotFound = () => {
+  const router = useRouter()
+  useEffect(()=>{
+    setTimeOut(() => {
+      router.go(-1)
+    },3000)
+  },[])
+  return(<>404</>)
+}
+export default NotFound
+~~~
+</details>
