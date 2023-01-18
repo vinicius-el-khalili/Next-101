@@ -1,25 +1,32 @@
 # Next js tutorial - Net Ninja
 <details>
-<summary>1. Intro & Setup<summary>
+<summary>1. Intro & Setup</summary>
 
 - ```npx create-next-app app-name```
 </details>
-<summary>## 2. Pages & Routes<summary>
+
+<details>
+<summary>2. Pages & Routes</summary>
 
 - Routing is done automatically by Next, mirroring the file structure in the project.
 - Each page is a react component inside the ```pages``` folder.
 - Subfolders also are mirrored as routes in the application.
 - ```index.js``` files are the default page for any given route/subfolder.
+
+</details>
+
 <details>
-<summary>## 3. Importing components<summary>
+<summary>3. Import components</summary>
   
 - Import syntax is the same as React:
 
 ~~~jsx
 import Component from "../components/Component"
 ~~~
+</details>
+
 <details>
-<summary>## 4. Linking between pages<summary>
+<summary>4. Linking between pages</summary>
 
 - Client-side navigation is done throught the ```Link``` component and it runs on the browser. Different pages are loaded via JavaScript, instead of HTTP requests, resulting in a much quicker loading time.
 
@@ -33,8 +40,11 @@ import Link from "next/link"
 - ```href``` values in a ```Link``` component correspond to its route, which follow the routing rules as seen in [2].
 
 - **Code-splitting & pre-fetching**: By default, Next code-splits the application, so that only the JavaScript needed for the current page is served from the server. You can see it in action at ```Inspect > Network```. At production, Next also will pre-fetch any code needed for the current page in the background, decreasing its loading time. See more at https://web.dev/route-prefetching-in-nextjs/.
+
+</details>
+
 <details>
-<summary>## 5. The ```App``` component<summary>
+<summary>5. The App component</summary>
 
 - In ```_app.js```, the ```App``` component takes as an argument the corresponding component of the current page (located at the ```pages``` folder, as seen in [2]).
 
@@ -71,8 +81,10 @@ export default function HomeOrSomeOtherName() {
   return (<Stuff/>)
 }
 ~~~
+</details>
+
 <details>
-<summary>## 6. Styling<summary>
+<summary>6. Styling</summary>
 
 - ***Global style sheet:***
 
@@ -136,3 +148,4 @@ Component_Style3_8i0mq{...}
 ~~~
 
 *(!) Pure elements cannot be targeted in module-based CSS. To target pure elements, you will need to use a global stylesheet or a regular import.*
+</details>
