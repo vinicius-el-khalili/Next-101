@@ -195,3 +195,17 @@ export default function Page(){
 }
 ~~~
 </details>
+
+- Metadata can be placed inside the ```Head``` component.
+
+~~~jsx
+import Head from 'next/head'
+export default function Page(){
+  return(<>
+    <Head>
+      <title>Page's title</title>
+      <meta name="keywords" content="something"/>
+    </Head>
+  </>)
+}
+~~~
