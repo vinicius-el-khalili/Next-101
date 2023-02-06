@@ -194,7 +194,7 @@ export default function Page(){
   )
 }
 ~~~
-</details>
+
 
 - Metadata can be placed inside the ```Head``` component.
 
@@ -209,3 +209,36 @@ export default function Page(){
   </>)
 }
 ~~~
+
+</details>
+
+<details>
+<summary>10. Fetching data (getStaticProps)</summary>
+
+- JSON Placeholder: https://jsonplaceholder.typicode.com (free fake API for tests)
+
+- ```useEffect``` could be used to fetch data into a component. However, it's prefered that the content be pre-rendered in the server, so that the template has data in it.
+
+- If you export a function called ```getStaticProps``` (Static Site Generation) from a page, Next.js will pre-render this page at build time using the props returned by getStaticProps (https://nextjs.org/docs/basic-features/data-fetching/get-static-props).
+
+~~~jsx
+export const getStaticProps = async ()=>{
+  const res = await fetch ("https://jsonplaceholder.typicode.com/users")
+  const data = await res.json()
+  return {
+    props:{users:data}
+  }
+}
+
+export default function Home({users}) {
+  return (<>
+    <div>
+      {users.map(user=>(
+        <div key={user.id}>{user.name}</div>
+      ))}
+    </div>
+  </>)
+}
+~~~
+
+</details>
