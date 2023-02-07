@@ -13,7 +13,7 @@ export default function Home({users}) {
     <>
     <div>
       {users.map(user=>(
-        <Link key={user.id} href={"/users/"+user.id}>
+        <Link key={user.id} href={"/users/"+user.id.toString()}>
           <div className={style.single}>
             {user.name}
           </div>
