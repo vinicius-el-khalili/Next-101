@@ -1,4 +1,5 @@
 import style from "../styles/Home.module.css"
+import Link from "next/link"
 export const getStaticProps = async ()=>{
   const res = await fetch ("https://jsonplaceholder.typicode.com/users")
   const data = await res.json()
@@ -12,9 +13,11 @@ export default function Home({users}) {
     <>
     <div>
       {users.map(user=>(
-        <div key={user.id} className={style.single}>
-          {user.name}
+        <Link key={user.id} href={"/users/"+user.id}>
+          <div className={style.single}>
+            {user.name}
           </div>
+          </Link>
       ))}
     </div>
 

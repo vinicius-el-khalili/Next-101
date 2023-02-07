@@ -244,7 +244,7 @@ export default function Home({users}) {
 </details>
 
 <details>
-<summary>11. Dynamic Routes and wrap parameters</summary>
+<summary>11. Dynamic routes & wrap parameters</summary>
 
 - Since the routes mirror the file structure, next makes use of a square brackets syntax for its files (```[id].js```) to indicate that the route corresponds to a wrap parameter.
 
@@ -254,4 +254,35 @@ export default function Home({users}) {
 // all routes in the form of "../users/{user.id}" will now be routed to the file [id].js. 
 ~~~
 
+</details>
+
+<details>
+<summary>12. Dynamic routes & getStaticPaths</summary>
+
+- If a page has Dynamic Routes and uses getStaticProps, it needs to define a list of paths to be statically generated.
+When you export a function called ```getStaticPaths``` (Static Site Generation) from a page that uses dynamic routes, Next.js will statically pre-render all the paths specified by ```getStaticPaths```. (https://nextjs.org/docs/basic-features/data-fetching/get-static-paths)
+
+~~~jsx
+// pages/posts/[id].js
+
+// Generates `/posts/1` and `/posts/2`
+export async function getStaticPaths() {
+  return {
+    paths: [{ params: { id: '1' } }, { params: { id: '2' } }],
+    fallback: false, // can also be true or 'blocking'
+  }
+}
+
+// `getStaticPaths` requires using `getStaticProps`
+export async function getStaticProps(context) {
+  return {
+    // Passed to the page component as props
+    props: { post: {} },
+  }
+}
+
+export default function Post({ post }) {
+  // Render post...
+}
+~~~
 </details>
