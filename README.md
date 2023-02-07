@@ -242,3 +242,16 @@ export default function Home({users}) {
 ~~~
 
 </details>
+
+<details>
+<summary>11. Dynamic Routes and wrap parameters</summary>
+
+- Since the routes mirror the file structure, next makes use of a square brackets syntax for its files (```[id].js```) to indicate that the route corresponds to a wrap parameter.
+
+- Now, the ```Link``` component can be used for dynamic routing
+~~~jsx
+<Link href={"../users/"+{user.id}}>{user.name}}</Link>
+// all routes in the form of "../users/{user.id}" will now be routed to the file [id].js. 
+~~~
+
+</details>
